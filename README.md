@@ -1,5 +1,5 @@
 
-# 💌 Don't Seen Zone – Find Your Saiyyara
+# 💌 Don't Seen Zone – Find Your Match
 
 Welcome to **Don't Seen Zone (@dontseenzone)** — the fun, flirt-filled matchmaking experiment for the Instagram generation. If you’re tired of being left on "Seen" or ghosted without reason, we’ve got you. 💖
 
