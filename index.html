@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Seen Zone 💌 - Find Your Match</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #f093fb 50%, #ff6b9d 75%, #ffeef0 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(255, 105, 135, 0.2), 0 0 0 1px rgba(255, 182, 193, 0.2);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 192, 203, 0.4);
+            animation: containerFloat 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        .container::before {
+            content: '💖✨💕';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #ff6b9d, #f093fb);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+            font-weight: 600;
+        }
+
+        @keyframes containerFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(255, 105, 135, 0.2);
+            animation: textGlow 3s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .hero-title::after {
+            content: '💌💘💖';
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 16px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes textGlow {
+            from { filter: drop-shadow(0 0 2px rgba(255, 105, 135, 0.3)); }
+            to { filter: drop-shadow(0 0 8px rgba(240, 147, 251, 0.4)); }
+        }
+
+        .profile-container {
+            position: relative;
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            animation: profilePulse 4s ease-in-out infinite;
+        }
+
+        .profile-container::before {
+            content: '✨💕✨';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            animation: sparkleRotate 3s linear infinite;
+        }
+
+        @keyframes sparkleRotate {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        @keyframes profilePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b9d, #f093fb, #e91e63, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientRotate 8s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            box-shadow: 0 15px 30px rgba(255, 105, 135, 0.2), 0 0 0 4px rgba(255, 255, 255, 0.8);
+            border: 4px solid #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .profile-image::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b9d, #f093fb, #e91e63, #ff9a9e);
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .profile-text {
+            font-size: 16px;
+            color: #666;
+            margin: 15px 0;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            position: relative;
+        }
+
+        .profile-text::before {
+            content: '💘';
+            margin-right: 8px;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        .profile-text::after {
+            content: '💘';
+            margin-left: 8px;
+            animation: heartBeat 1.5s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(255, 105, 135, 0.2);
+            transition: all 0.3s ease;
+            margin: 10px 0;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .cta-button::before {
+            content: '✨ ';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .cta-button::after {
+            content: ' ✨';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: sparkle 2s ease-in-out infinite 1s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(0.8); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 105, 135, 0.3);
+            background: linear-gradient(135deg, #f093fb, #e91e63, #ff6b9d);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        .subtext {
+            font-size: 14px;
+            color: #777;
+            margin: 20px 0;
+            line-height: 1.5;
+            animation: fadeInUp 1s ease-out 0.9s both;
+            text-align: center;
+            position: relative;
+        }
+
+        .subtext::before {
+            content: '💌';
+            margin-right: 8px;
+        }
+
+        .subtext::after {
+            content: '💌';
+            margin-left: 8px;
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            animation: slideInFromLeft 0.8s ease-out;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .section::before {
+            content: '💖';
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: linear-gradient(45deg, #ff6b9d, #f093fb);
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 12px;
+            animation: sectionFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes sectionFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(180deg); }
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 105, 135, 0.2);
+            border-color: rgba(255, 105, 135, 0.5);
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '💕';
+            position: absolute;
+            top: -5px;
+            right: -25px;
+            animation: titleFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .steps {
+            list-style: none;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 105, 135, 0.1), rgba(240, 147, 251, 0.1));
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+            border-image: linear-gradient(135deg, #ff6b9d, #f093fb) 1;
+            animation: stepSlideIn 0.6s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, rgba(255, 105, 135, 0.2), rgba(240, 147, 251, 0.2));
+        }
+
+        @keyframes stepSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(255, 105, 135, 0.2);
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .step-text {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin: 15px 0;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 105, 135, 0.3);
+            border-radius: 12px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #ff6b9d;
+            box-shadow: 0 0 10px rgba(255, 105, 135, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type=file] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 12px 15px;
+            background: linear-gradient(135deg, rgba(255, 105, 135, 0.1), rgba(240, 147, 251, 0.1));
+            border: 2px dashed #ff6b9d;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .file-upload-label:hover {
+            background: linear-gradient(135deg, rgba(255, 105, 135, 0.2), rgba(240, 147, 251, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .instagram-cta {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 15px 30px rgba(255, 105, 135, 0.2);
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .instagram-link i {
+            margin-right: 8px;
+            font-size: 18px;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255, 105, 135, 0.1);
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            background-clip: initial;
+            color: #ff6b9d;
+        }
+
+        /* Enhanced Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 105, 135, 0.05) 100%);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(255, 105, 135, 0.3);
+            animation: modalSlideIn 0.4s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px) scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 20px;
+            max-height: 60vh;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .modal-body h3 {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 16px;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        .modal-body p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .modal-body ol {
+            padding-left: 20px;
+        }
+
+        .modal-body li {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .modal-body strong {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* Enhanced scrollbar for modal */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: rgba(255, 105, 135, 0.1);
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #ff6b9d, #f093fb, #e91e63);
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #f093fb, #e91e63, #ff6b9d);
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 105, 135, 0.6);
+            font-size: 20px;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Particle System */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b9d, #f093fb, #e91e63);
+            border-radius: 50%;
+            animation: particleFloat 15s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts">
+        <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+        <div class="heart" style="left: 20%; animation-delay: 1s;">💕</div>
+        <div class="heart" style="left: 30%; animation-delay: 2s;">💘</div>
+        <div class="heart" style="left: 40%; animation-delay: 3s;">💝</div>
+        <div class="heart" style="left: 50%; animation-delay: 4s;">💖</div>
+        <div class="heart" style="left: 60%; animation-delay: 5s;">💕</div>
+        <div class="heart" style="left: 70%; animation-delay: 6s;">💘</div>
+        <div class="heart" style="left: 80%; animation-delay: 7s;">💝</div>
+        <div class="heart" style="left: 90%; animation-delay: 8s;">💖</div>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">Tired of being left on read? Welcome to Don't Seen Zone 💌</h1>
+            
+            <div class="profile-container">
+                <div class="profile-image">
+                    👩‍🦰
+                </div>
+            </div>
+            
+            <p class="profile-text">She's not real... but your match will be 😉</p>
+            
+            <button class="cta-button" onclick="scrollToForm()">Get Your Match 💘</button>
+            
+            <p class="subtext">DM your photo, type & vibe — let our flirt squad find your match 💘</p>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="section">
+            <h2 class="section-title">How It Works ✨</h2>
+            <ul class="steps">
+                <li class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">DM your pic, name & type ❤️</div>
+                </li>
+                <li class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Our match squad finds your vibe 🔍</div>
+                </li>
+                <li class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">You get matched 💘 (or ghosted by destiny 😜)</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="section" id="contact-form">
+            <h2 class="section-title">Get Your Match 💌</h2>
+            <form action="https://formsubmit.co/dontseenzone@gmail.com" method="POST">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name 💕</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your cute name..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="location">City & State 📍</label>
+                    <input type="text" id="location" name="location" class="form-input" placeholder="Where you're at..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="type">Your Type (preference) 💖</label>
+                    <input type="text" id="type" name="type" class="form-input" placeholder="Describe your ideal match..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="photo">Google Drive Link or Upload Photo 📸</label>
+                    <input type="url" id="photo-link" name="photo-link" class="form-input" placeholder="Paste your Google Drive link here..." style="margin-bottom: 10px;">
+                    <div class="file-upload">
+                        <input type="file" id="photo-upload" name="photo-upload" accept="image/*">
+                        <label for="photo-upload" class="file-upload-label">
+                            📷 Or click to upload your photo
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="cta-button">Send Me a Match 💌</button>
+            </form>
+        </div>
+
+        <!-- Instagram CTA Section -->
+        <div class="instagram-cta">
+            <p style="margin-bottom: 10px; font-weight: 600;">Or just DM us @dontseenzone for a quicker match ✨</p>
+            <a href="https://instagram.com/dontseenzone" class="instagram-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+                @dontseenzone
+            </a>
+        </div>
+
+        <!-- Privacy & Terms Footer -->
+        <div class="footer">
+            <p class="footer-text">We don't store or share any data. It's all fun, flirty, and for vibes only 💖</p>
+            <div class="footer-links">
+                <a href="#" onclick="openModal('termsModal')">Terms</a>
+                <a href="#" onclick="openModal('privacyModal')">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">✅ Terms & Conditions – Don't Seen Zone</h2>
+                <span class="close" onclick="closeModal('termsModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated: July 23, 2025</strong></p>
+                <p>Welcome to Don't Seen Zone 💌. By accessing this service (via Instagram, website, or any other means), you agree to the following terms:</p>
+                
+                <h3>1. For Entertainment Purposes Only</h3>
+                <p>All matchmaking is random and curated manually. We do not guarantee love, dates, or relationships. This is a fun project created to connect people in a light-hearted way.</p>
+                
+                <h3>2. Age Limit</h3>
+                <p>You must be 18 years or older to participate in this matchmaking experience. By submitting your details, you confirm that you meet this requirement.</p>
+                
+                <h3>3. Submissions</h3>
+                <p>By sending your photos and preferences via our form or Instagram DMs, you consent to being matched based on the information you provide. We reserve the right to refuse or skip any submission that is offensive, fake, or inappropriate.</p>
+                
+                <h3>4. Communication</h3>
+                <p>You may receive playful or flirty DMs as part of the experience. No abusive or disrespectful behavior will be tolerated toward our team or participants.</p>
+                
+                <h3>5. Changes to Terms</h3>
+                <p>These terms may change without notice. Continued use of the service implies your acceptance of the updated terms.</p>
+                
+                <p><strong>For questions or concerns, contact us via Instagram DM: @dontseenzone</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">🔒 Privacy Policy – Don't Seen Zone</h2>
+                <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated: July 23, 2025</strong></p>
+                <p>Don't Seen Zone 💌 values your privacy. Here's how we handle the information you share with us:</p>
+                
+                <h3>1. What We Collect</h3>
+                <p>We collect the following when you DM us or submit the form:</p>
+                <ul>
+                    <li>Your name</li>
+                    <li>Your city or location</li>
+                    <li>Your dating preferences</li>
+                    <li>Your photo (optional via Google Drive or upload)</li>
+                </ul>
+                
+                <h3>2. How We Use It</h3>
+                <p>We use your data ONLY to find and suggest a potential match. Your data is manually reviewed by our matchmaking team and is not used for marketing, resale, or automated AI processing.</p>
+                
+                <h3>3. Data Storage</h3>
+                <p>Your submissions are not stored in any permanent database. Once matched or inactive for 14 days, all records may be deleted.</p>
+                
+                <h3>4. No Sharing</h3>
+                <p>We do not sell, rent, or share your personal data with anyone — not even your crush 😉</p>
+                
+                <h3>5. Your Control</h3>
+                <p>You may request deletion of your data at any time by messaging us on Instagram.</p>
+                
+                <h3>6. Updates</h3>
+                <p>This privacy policy may be updated periodically. Continued use of the service means you agree to the latest version.</p>
+                
+                <p><strong>Still worried? DM us @dontseenzone — we gotchu 💖</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToForm() {
+            document.getElementById('contact-form').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // File upload preview
+        document.getElementById('photo-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const label = document.querySelector('.file-upload-label');
+            if (file) {
+                label.textContent = `📷 ${file.name} selected!`;
+                label.style.background = 'rgba(255, 182, 193, 0.5)';
+            }
+        });
+
+        // Add some interactive sparkle effects
+        document.addEventListener('click', function(e) {
+            createSparkle(e.clientX, e.clientY);
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '1000';
+            sparkle.style.animation = 'sparkleAnimation 1s ease-out forwards';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+
+        // Add sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleAnimation {
+                0% {
+                    transform: scale(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1.5) rotate(180deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
