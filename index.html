@@ -837,7 +837,13 @@
         <!-- Contact Form Section -->
         <div class="section" id="contact-form">
             <h2 class="section-title">Get Your Match 💌</h2>
-            <form action="https://formsubmit.co/dontseenzone@gmail.com" method="POST">
+            <form action="https://formsubmit.co/dontseenzone@gmail.com" method="POST" enctype="multipart/form-data">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Match Request from Don't Seen Zone! 💘">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://dontseenzone.com/thank-you.html">
+                
                 <div class="form-group">
                     <label class="form-label" for="name">Name 💕</label>
                     <input type="text" id="name" name="name" class="form-input" placeholder="Your cute name..." required>
@@ -850,16 +856,20 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="type">Your Type (preference) 💖</label>
-                    <input type="text" id="type" name="type" class="form-input" placeholder="Describe your ideal match..." required>
+                    <textarea id="type" name="type" class="form-input" placeholder="Describe your ideal match..." rows="3" required style="resize: vertical; min-height: 80px;"></textarea>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="photo">Google Drive Link or Upload Photo 📸</label>
-                    <input type="url" id="photo-link" name="photo-link" class="form-input" placeholder="Paste your Google Drive link here..." style="margin-bottom: 10px;">
+                    <label class="form-label" for="photo-link">Google Drive Link 📸</label>
+                    <input type="url" id="photo-link" name="photo_link" class="form-input" placeholder="Paste your Google Drive link here...">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="photo-upload">Upload Photo 📷</label>
                     <div class="file-upload">
-                        <input type="file" id="photo-upload" name="photo-upload" accept="image/*">
+                        <input type="file" id="photo-upload" name="photo_upload" accept="image/*">
                         <label for="photo-upload" class="file-upload-label">
-                            📷 Or click to upload your photo
+                            📷 Click to upload your photo
                         </label>
                     </div>
                 </div>
