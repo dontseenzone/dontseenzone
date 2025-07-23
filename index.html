@@ -85,15 +85,12 @@
         .hero-title {
             font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(135deg, #ff6b9d, #f093fb, #ffb3f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #fff;
             margin: 20px 0;
             line-height: 1.3;
-            text-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
             position: relative;
             letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .hero-title::after {
@@ -114,21 +111,6 @@
             display: flex;
             justify-content: center;
             animation: profilePulse 4s ease-in-out infinite;
-        }
-
-        .profile-container::before {
-            content: '✨💕✨';
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 14px;
-            animation: sparkleRotate 3s linear infinite;
-        }
-
-        @keyframes sparkleRotate {
-            0% { transform: translateX(-50%) rotate(0deg); }
-            100% { transform: translateX(-50%) rotate(360deg); }
         }
 
         @keyframes profilePulse {
@@ -167,7 +149,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            background: radial-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             animation: shimmer 3s infinite;
         }
 
@@ -622,7 +604,7 @@
             font-size: 24px;
             font-weight: 800;
             margin: 0;
-            color: #1a252f;
+            color: #cccecf;
             text-shadow: 0 2px 8px rgba(44,62,80,0.08);
             letter-spacing: 0.5px;
         }
@@ -783,18 +765,6 @@
     </style>
 </head>
 <body>
-    <div class="floating-hearts">
-        <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
-        <div class="heart" style="left: 20%; animation-delay: 1s;">💕</div>
-        <div class="heart" style="left: 30%; animation-delay: 2s;">💘</div>
-        <div class="heart" style="left: 40%; animation-delay: 3s;">💝</div>
-        <div class="heart" style="left: 50%; animation-delay: 4s;">💖</div>
-        <div class="heart" style="left: 60%; animation-delay: 5s;">💕</div>
-        <div class="heart" style="left: 70%; animation-delay: 6s;">💘</div>
-        <div class="heart" style="left: 80%; animation-delay: 7s;">💝</div>
-        <div class="heart" style="left: 90%; animation-delay: 8s;">💖</div>
-    </div>
-
     <div class="container">
         <!-- Hero Section -->
         <div class="hero-section">
@@ -987,43 +957,6 @@
                 label.style.background = 'rgba(255, 182, 193, 0.5)';
             }
         });
-
-        // Add some interactive sparkle effects
-        document.addEventListener('click', function(e) {
-            createSparkle(e.clientX, e.clientY);
-        });
-
-        function createSparkle(x, y) {
-            const sparkle = document.createElement('div');
-            sparkle.innerHTML = '✨';
-            sparkle.style.position = 'fixed';
-            sparkle.style.left = x + 'px';
-            sparkle.style.top = y + 'px';
-            sparkle.style.pointerEvents = 'none';
-            sparkle.style.zIndex = '1000';
-            sparkle.style.animation = 'sparkleAnimation 1s ease-out forwards';
-            document.body.appendChild(sparkle);
-            
-            setTimeout(() => {
-                sparkle.remove();
-            }, 1000);
-        }
-
-        // Add sparkle animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes sparkleAnimation {
-                0% {
-                    transform: scale(0) rotate(0deg);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(1.5) rotate(180deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
 
         // Modal functions
         function openModal(modalId) {
